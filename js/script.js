@@ -16,7 +16,6 @@ form.addEventListener("submit", (event) => {
   localStorage.setItem("tasks", JSON.stringify(tasks));
 
   inputText.value = "";
-  console.log(tasks);
   renderTasks();
 });
 
@@ -29,14 +28,38 @@ const renderTasks = () => {
     (task) =>
       (tbody.innerHTML += `
       <tr>
-        <td>${task.text}</td>
+        <td class="${task.complete ? "complete" : ""}">${task.text}</td>
         <td>
-            <button>Complete</button>
+            <button data-id="${task.id}" class="btn-complete">Complete</button>
             <button>Edit</button>
-            <button>Delete</button>
+            <button onclick="deleteTask(${task.id})">Delete</button>
         </td>
         </tr>`)
   );
 };
 
-renderTasks();
+document.addEventListener("click", (e) => {
+  if (e.target.classList.contains("btn-complete")) {
+    completeTask(e.target.dataset.id);
+  }
+});
+
+const completeTask = (id) => {
+  tasks.forEach((task) => {
+    if (task.id == id) {
+      task.complete = !task.complete;
+    }
+  });
+  localStorage.setItem("tasks", JSON.stringify(tasks));
+  renderTasks();
+};
+
+const deleteTask = (id) => {
+  const filtered = tasks.filter((task) => task.id != id);
+  localStorage.setItem("tasks", JSON.stringify(filtered));
+  renderTasks();
+};
+
+document.addEventListener("DOMContentLoaded", () => {
+  renderTasks();
+});
