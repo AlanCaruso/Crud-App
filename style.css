@@ -1,3 +1,128 @@
+* {
+  outline: none;
+  font-family: "Montserrat", sans-serif;
+}
+html body {
+  background: #f1f5fd;
+  font-family: "Montserrat", sans-serif;
+}
+
 .complete {
   text-decoration: line-through;
+}
+
+.container {
+  width: 450px;
+  position: absolute;
+  left: 50%;
+  top: 45%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.card {
+  width: 100%;
+  background-color: white;
+  padding: 10px;
+  padding-bottom: 30px;
+  box-shadow: 1px 1px 1px black;
+  border-radius: 10px;
+  background: #f9f9fc;
+  box-shadow: 0px 0px 30px #d6d6d9;
+}
+.form-wrap {
+  display: flex;
+  width: 420px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.form-wrap input {
+  flex: 1;
+  padding: 20px;
+  -webkit-border-top-left-radius: 5px;
+  -webkit-border-bottom-left-radius: 5px;
+  -moz-border-radius-topleft: 5px;
+  -moz-border-radius-bottomleft: 5px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  box-shadow: none;
+  border: none;
+  cursor: default;
+  border: 1px solid rgb(187, 187, 187);
+  border-right: none;
+}
+.btn-submit {
+  padding-right: 10px;
+  background-color: #fff;
+  -webkit-border-top-right-radius: 5px;
+  -webkit-border-bottom-right-radius: 5px;
+  -moz-border-radius-topright: 5px;
+  -moz-border-radius-bottomright: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border: none;
+  cursor: pointer;
+  cursor: hand;
+  border: 1px solid rgb(187, 187, 187);
+  border-left: none;
+}
+.btn-form {
+  margin-left: 10px;
+  padding: 10px 25px;
+  font-weight: 300;
+  color: #fff;
+  background-color: #2951ff;
+  border-radius: 5px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+}
+.btn-complete {
+  display: flex;
+  margin-left: 20px;
+  align-content: start;
+  align-items: start;
+  text-align: left;
+}
+table {
+  text-align: center;
+  margin: auto;
+  width: 100%;
+}
+
+.task-title {
+  display: flex;
+  align-content: start;
+  align-items: start;
+  text-align: left;
+}
+.tasks-panel {
+  align-content: end;
+  align-items: end;
+  text-align: right;
+  padding-right: 15px;
+}
+
+.btn-panel {
+  width: 20px;
+  line-height: 1;
+  cursor: pointer;
+  margin-left: 10px;
+  vertical-align: middle;
+}
+
+.btn-edit {
+  width: 15px;
+}
+
+.task-container {
+  background-color: #f1f5fd;
+  border-radius: 10px;
+  border: 7px solid white;
+}
+
+.task-container td {
+  padding: 15px;
+  border-left: none;
+  border-bottom: none;
 }

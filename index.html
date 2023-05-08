@@ -4,20 +4,38 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
     <title>Crud App</title>
   </head>
   <body>
-    <h1>Tareas</h1>
-    <form>
-      <input type="hidden" id="id" value="" />
-      <input type="text" id="text" required />
-      <button type="submit">Save</button>
-    </form>
-    <hr />
-    <table>
-      <tbody></tbody>
-    </table>
+    <div class="container">
+      <div class="card">
+        <h1>Tasks</h1>
+        <form>
+          <div class="form-wrap">
+            <input type="hidden" id="id" value="" />
+            <input
+              type="text"
+              placeholder="Enter your new task"
+              id="text"
+              required
+            />
+
+            <button class="btn-submit" type="submit">
+              <span class="btn-form">Add</span>
+            </button>
+          </div>
+        </form>
+        <br />
+        <table rules="none">
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
     <script src="js/script.js"></script>
   </body>
 </html>

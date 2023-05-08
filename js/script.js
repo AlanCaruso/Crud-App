@@ -38,12 +38,22 @@ const renderTasks = () => {
   tasks.forEach(
     (task) =>
       (tbody.innerHTML += `
-      <tr>
-        <td class="${task.complete ? "complete" : ""}">${task.text}</td>
-        <td>
-            <button data-id="${task.id}" class="btn-complete">Complete</button>
-            <button onclick="editTask(${task.id})">Edit</button>
-            <button onclick="deleteTask(${task.id})">Delete</button>
+      <tr class="task-container">
+      <td>
+            <input type="checkbox" data-id="${task.id}" class="btn-complete"  ${
+        task.complete ? "checked" : ""
+      }>
+        </td>
+        <td class="${task.complete ? "complete" : ""} + task-title">${
+        task.text
+      }</td>
+        <td class="tasks-panel">
+        <img class="btn-panel btn-edit" onclick="editTask(${
+          task.id
+        })" src="img/edit.png" alt="" />
+            <img class="btn-panel" onclick="deleteTask(${
+              task.id
+            })" src="img/delete.png" alt="" />
         </td>
         </tr>`)
   );
